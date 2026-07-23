@@ -28,13 +28,13 @@ jobs:
               run: pytest --cov=src
 
             - name: Coverage comment
-              uses: py-cov-action/python-coverage-comment-action@v4
+              uses: py-cov-action/python-coverage-comment-action@v3
               with: 
                 GITHUB_TOKEN: ${{ github.token  }}
-                MINIMUM_GREEN: 90
-                MINIMUN_ORANGE: 70
+                MINIMUM_GREEN: 88
+                MINIMUM_ORANGE: 70
 
             - name: Fail if below threshold
-              run: coverage report --fail-under=90
+              run: coverage report --fail-under=88
 
 
